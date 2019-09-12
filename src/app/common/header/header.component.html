@@ -1,0 +1,24 @@
+<mat-toolbar #headerToolbar color="primary">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-around center">
+    <a mat-button routerLink="accueil">Logo</a>
+    <a fxShow.xs="false" mat-button routerLink="accueil">Accueil</a>
+    <a mat-button routerLink="series">Séries</a>
+    <a mat-button routerLink="films">Films</a>
+    <a mat-button>Wishlist</a>
+
+    <div fxShow.xs="false" fxFlex="grow"></div>
+
+    <mat-form-field class="example-form-field" [ngStyle]="getInputWidth()">
+        <input #search matInput type="text" placeholder="Recherche un film ou une série" [(ngModel)]="searchQuery" (ngModelChange)="goToSearch()">
+        <button mat-button *ngIf="searchIsOpen" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()" routerLink="accueil">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button fxShow.xs="false" mat-icon-button aria-label="Search" *ngIf="!searchIsOpen" (click)="setInputWidth()">
+        <mat-icon>search</mat-icon>
+      </button>
+    <button fxShow.xs="false" mat-icon-button aria-label="Account">
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

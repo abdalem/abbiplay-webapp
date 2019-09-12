@@ -1,0 +1,44 @@
+@import '~src/variables';
+
+.trending-trailer {
+  width: 100%;
+  height: calc(100vw / 1.77);
+  max-height: 80vh !important;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+
+  .header-overview {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 25px;
+    color: #37474F;
+
+    @media #{$mat-media-lt-md} {
+      text-align: center;
+
+      p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(241, 242, 242));
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+
+    .ytp-chrome-top, .ytp-watermark, .ytp-pause-overlay {
+      display: none !important;
+    }
+  }
+}

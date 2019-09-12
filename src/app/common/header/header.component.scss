@@ -1,0 +1,10 @@
+mat-form-field {
+  transition: width 0.6s ease-in-out;
+  max-width: 300px;
+}
+
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

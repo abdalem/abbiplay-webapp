@@ -1,0 +1,5 @@
+<app-media-trending *ngIf="headerVideo && headerMedia" [video]="headerVideo" [media]="headerMedia"></app-media-trending>
+
+<app-filter-menu></app-filter-menu>
+
+<app-media-list *ngIf="media" [items]="media.results" fxLayout="row wrap" fxLayoutAlign="start start" infiniteScroll (scrolled)="onScroll()" [scrollWindow]="true"></app-media-list>

@@ -1,0 +1,17 @@
+<app-media-trending *ngIf="headerVideo && headerMedia" [video]="headerVideo" [media]="headerMedia"></app-media-trending>
+
+<div *ngFor="let key of sectionsOrder, let i = index" fxLayout="column" class="sections-medias">
+  <h1>{{sections[key].title}}</h1>
+  
+  <app-media-list [id]="'panel_' + i" [items]="sections[key].results" fxLayout="row" fxLayoutAlign="start start" infiniteScroll (scrolled)="onScroll(key)" [scrollWindow]="false" horizontal="true"></app-media-list>
+
+  <div class="sliding-button sliding-button-left">
+    <button fxHide.xs fxShow.gt-xs (click)="scrollTo('left', 'panel_' + i)" color="primary" mat-fab><mat-icon>chevron_left</mat-icon></button>
+    <button fxHide.gt-xs fxShow.xs (click)="scrollTo('left', 'panel_' + i)" color="primary" mat-mini-fab><mat-icon>chevron_left</mat-icon></button>
+  </div>
+   
+  <div class="sliding-button sliding-button-right">
+    <button fxHide.xs fxShow.gt-xs (click)="scrollTo('right', 'panel_' + i)" color="primary" mat-fab><mat-icon>chevron_right</mat-icon></button>
+    <button fxHide.gt-xs fxShow.xs (click)="scrollTo('right', 'panel_' + i)" color="primary" mat-mini-fab><mat-icon>chevron_right</mat-icon></button>
+  </div>
+</div>

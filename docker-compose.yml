@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  client:
+    container_name: abbiplay-webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 100:4200
+    volumes:
+      - ./:/usr/src/app
+      - ./node_modules:/usr/src/app/node_modules
+    environment:
+      VIRTUAL_HOST: "play.abbi-studio.local"
+      APP_UID: "1000"
+      APP_GID: "1000"
+networks:
+  default:
+    external:
+      name: nginx-proxy

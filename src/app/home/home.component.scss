@@ -1,0 +1,29 @@
+@import '~src/variables';
+
+.sections-medias {
+  position: relative;
+  h1{
+    color: #37474F;
+    margin-top: 60px;
+    font-weight: lighter;
+  }
+  .sliding-button {
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    &.sliding-button-left {
+      left: 0;
+    }
+    &.sliding-button-right {
+      right: 0;
+    }
+  }
+}
+
+.mat-menu-panel {
+  max-width: none;
+}

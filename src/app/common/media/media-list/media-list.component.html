@@ -1,0 +1,10 @@
+<mat-card *ngFor="let item of items; let i = index" fxFlex.lt-md="32" fxFlex.md="24" fxFlex.lg="19" fxFlex.gt-lg="16" [ngStyle]="getCardStyles(item.poster_path, item.backdrop_path)" fxLayout="column" fxLayoutAlign="space-between start">
+  <mat-card-header>
+    <mat-card-title fxHide.xs="true">{{item.title || item.name}}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

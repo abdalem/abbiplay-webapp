@@ -1,0 +1,11 @@
+<div class="trending-trailer" [ngStyle]="getHeaderStyle()" fxLayout="row" fxLayoutAlign="space-around center">
+  <div class="header-overview" *ngIf="media" fxLayout="column" fxFlex="40" fxFlex.lt-md="95">
+    <h1>{{media.name || media.title}}</h1>
+    <p>{{media.overview}}</p>
+  </div>
+  <div fxFlex="40" #playerContainer fxHide.lt-md [ngStyle]="getPlayerHeight()">
+    <youtube-player *ngIf="video" [videoId]="video.key" width="100%" height="100%"></youtube-player>
+  </div>
+
+  <div class="bottom-gradient"></div>
+</div>
